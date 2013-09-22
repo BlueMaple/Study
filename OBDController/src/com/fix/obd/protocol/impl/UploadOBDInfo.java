@@ -1,4 +1,4 @@
-package com.sq;
+package com.fix.obd.protocol.impl;
 
 import org.apache.log4j.Logger;
 
@@ -18,6 +18,7 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 	@Override
 	public boolean DBOperation() {
 		// TODO Auto-generated method stub
+		logger.info("÷’∂À–≈œ¢∞¸¿®" + this.getRealMessage());
 		return false;
 	}
 

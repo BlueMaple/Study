@@ -11,8 +11,10 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib"/>
+	<classpathentry kind="lib" path="E:/单琦/MyCode/Study/OBDController/WebContent/WEB-INF/lib/jsp-api-2.1.jar"/>
+	<classpathentry kind="lib" path="E:/单琦/MyCode/Study/OBDController/WebContent/WEB-INF/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="E:/单琦/MyCode/Study/OBDController/WebContent/WEB-INF/lib/servlet-api-2.5-6.1.9.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
