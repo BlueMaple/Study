@@ -19,6 +19,7 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 	public boolean DBOperation() {
 		// TODO Auto-generated method stub
 		logger.info("÷’∂À–≈œ¢∞¸¿®" + this.getRealMessage());
+		String realMessage = this.getRealMessage();
 		return false;
 	}
 
