@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 
 import com.fix.obd.protocol.ODBProtocol;
 import com.fix.obd.protocol.ODBProtocolParser;
+import com.sq.XMLReader;
 
 public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 	private static final Logger logger = Logger.getLogger(UploadOBDInfo.class);
@@ -20,6 +21,8 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 		// TODO Auto-generated method stub
 		logger.info("÷’∂À–≈œ¢∞¸¿®" + this.getRealMessage());
 		String realMessage = this.getRealMessage();
+		
+		XMLReader reader = new XMLReader();
 		return false;
 	}
 

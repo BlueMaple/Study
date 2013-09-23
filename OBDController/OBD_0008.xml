@@ -1,223 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ODBTable>
-	<Parameter id=0>
-		<name>Obd�ٶ�</name>
+	<Parameter id="0">
+		<name>Obd速度</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
-		<introduction>��λkm\H</introduction>
+		<introduction>单位km\H</introduction>
 	</Parameter>
-	<Parameter id=1>
-		<name>��ص�ѹ</name>
+	<Parameter id="1">
+		<name>电池电压</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
-		<introduction>��λ0.1v</introduction>
+		<introduction>单位0.1v</introduction>
 	</Parameter>
-	<Parameter id=2>
-		<name>���������</name>
+	<Parameter id="2">
+		<name>故障码个数</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
-		<introduction>��</introduction>
+		<introduction>个</introduction>
 	</Parameter>
-	<Parameter id=3>
-		<name>���ϵ�״̬</name>
+	<Parameter id="3">
+		<name>故障灯状态</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
-		<introduction>״̬:0x00����,0x01����,0x02����</introduction>
+		<introduction>状态:0x00正常,0x01警告,0x02严重</introduction>
 	</Parameter>
-	<Parameter id=4>
-		<name>��������ȴҺ�¶�</name>
+	<Parameter id="4">
+		<name>发动机冷却液温度</name>
 		<length>1</length>
 		<decode>SignedByteDecoder</decode>
-		<introduction>���϶�</introduction>
+		<introduction>摄氏度</introduction>
 	</Parameter>
-	<Parameter id=5>
-		<name>������ܾ���ѹ��</name>
+	<Parameter id="5">
+		<name>进气歧管绝对压力</name>
 		<length>1</length>
 		<decode>UnsignedByteDecoder</decode>
-		<introduction>ǧ��</introduction>
+		<introduction>千帕</introduction>
 	</Parameter>
-	<Parameter id=6>
-		<name>������ת��</name>
+	<Parameter id="6">
+		<name>发动机转速</name>
 		<length>1</length>
 		<decode>UnsignedByteDecoder</decode>
-		<introduction>תÿ��</introduction>
+		<introduction>转每分</introduction>
 	</Parameter>
-	<Parameter id=7>
-		<name>1�����׵��ʱ��ǰ��</name>
+	<Parameter id="7">
+		<name>1号气缸点火时提前角</name>
 		<length>2</length>
 		<decode>SignedByteDecoder</decode>
-		<introduction>0.1��</introduction>
+		<introduction>0.1度</introduction>
 	</Parameter>
-	<Parameter id=8>
-		<name>�����¶�</name>
+	<Parameter id="8">
+		<name>进气温度</name>
 		<length>1</length>
 		<decode>SignedByteDecoder</decode>
-		<introduction>���϶�</introduction>
+		<introduction>摄氏度</introduction>
 	</Parameter>
-	<Parameter id=9>
-		<name>���������������Ŀ�������</name>
+	<Parameter id="9">
+		<name>空气流量传感器的空气流量</name>
 		<length>2</length>
 		<decode>UnsignedByteDecoder</decode>
-		<introduction>0.01����/��</introduction>
+		<introduction>0.01加仑/秒</introduction>
 	</Parameter>
-	<Parameter id=10>
-		<name>���Խ�����λ��</name>
+	<Parameter id="10">
+		<name>绝对节气门位置</name>
 		<length>1</length>
 		<decode>SignedByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=11>
-		<name>���ο���״ָ̬��</name>
+	<Parameter id="11">
+		<name>二次空气状态指令</name>
 		<length>2</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction></introduction>
 	</Parameter>
-	<Parameter id=12>
-		<name>����������λ��</name>
+	<Parameter id="12">
+		<name>氧传感器的位置</name>
 		<length>2</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction></introduction>
 	</Parameter>
-	<Parameter id=13>
-		<name>�Է������𶯵�ʱ��7d</name>
+	<Parameter id="13">
+		<name>自发动机起动的时间7d</name>
 		<length>2</length>
 		<decode>DecimalByteDecoder</decode>
-		<introduction>��</introduction>
+		<introduction>秒</introduction>
 	</Parameter>
-	<Parameter id=14>
-		<name>�ڹ���ָʾ�Ƽ���״̬����ʻ�����7e</name>
+	<Parameter id="14">
+		<name>在故障指示灯激活状态下行驶的里程7e</name>
 		<length>2</length>
 		<decode>DecimalByteDecoder</decode>
-		<introduction>ǧ��</introduction>
+		<introduction>千米</introduction>
 	</Parameter>
-	<Parameter id=15>
-		<name>����������նȵ��͹�ѹ��7f</name>
+	<Parameter id="15">
+		<name>相对于歧管真空度的油轨压力7f</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
-		<introduction>ǧ��</introduction>
+		<introduction>千帕</introduction>
 	</Parameter>
-	<Parameter id=16>
-		<name>����ڴ���ѹ�����͹�ѹ��80</name>
+	<Parameter id="16">
+		<name>相对于大气压力的油轨压力80</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
-		<introduction>ǧ��</introduction>
+		<introduction>千帕</introduction>
 	</Parameter>
-	<Parameter id=17>
-		<name>������ѭ��ϵͳָ���81</name>
+	<Parameter id="17">
+		<name>废气再循环系统指令开度81</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=18>
-		<name>EGR������� (ʵ�ʿ��� �� ָ���)/ָ���*100</name>
+	<Parameter id="18">
+		<name>EGR开度误差 (实际开度 — 指令开度)/指令开度*100</name>
 		<length>1</length>
 		<decode>SignedByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=19>
-		<name>������ϴ����ָ��</name>
+	<Parameter id="19">
+		<name>蒸发冲洗控制指令</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=20>
-		<name>ȼ��Һλ����</name>
+	<Parameter id="20">
+		<name>燃油液位输入</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=21>
-		<name>����ϵͳ������ѹ��</name>
+	<Parameter id="21">
+		<name>蒸发系统的蒸气压力</name>
 		<length>2</length>
 		<decode>SignedByteDecoder</decode>
 		<introduction>Pa</introduction>
 	</Parameter>
-	<Parameter id=22>
-		<name>����ѹ</name>
+	<Parameter id="22">
+		<name>大气压</name>
 		<length>2</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>Kpa</introduction>
 	</Parameter>
-	<Parameter id=23>
-		<name>��Խ�����λ��</name>
+	<Parameter id="23">
+		<name>相对节气门位置</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=24>
-		<name>���������¶�</name>
+	<Parameter id="24">
+		<name>环境空气温度</name>
 		<length>1</length>
 		<decode>SignedByteDecoder</decode>
-		<introduction>��</introduction>
+		<introduction>℃</introduction>
 	</Parameter>
-	<Parameter id=25>
-		<name>���Խ�����λ��B</name>
+	<Parameter id="25">
+		<name>绝对节气门位置B</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=26>
-		<name>���Խ�����λ��C  a9</name>
+	<Parameter id="26">
+		<name>绝对节气门位置C  a9</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=27>
-		<name>����̤��λ��D  aa</name>
+	<Parameter id="27">
+		<name>加速踏板位置D  aa</name>
 		<length>1</length>
 		<decode></decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=28>
-		<name>����̤��λ��E  ab</name>
+	<Parameter id="28">
+		<name>加速踏板位置E  ab</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=29>
-		<name>����̤��λ��F   ac</name>
+	<Parameter id="29">
+		<name>加速踏板位置F   ac</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=30>
-		<name>������ִ��������ָ��  ad</name>
+	<Parameter id="30">
+		<name>节气门执行器控制指令  ad</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=31>
-		<name>����ָʾ�ƴ��ڼ���״̬�µķ�������תʱ��  ae</name>
+	<Parameter id="31">
+		<name>故障指示灯处于激活状态下的发动机运转时间  ae</name>
 		<length>2</length>
 		<decode>DecimalByteDecoder</decode>
-		<introduction>����</introduction>
+		<introduction>分钟</introduction>
 	</Parameter>
-	<Parameter id=32>
-		<name>�͹����ѹ�� c1</name>
+	<Parameter id="32">
+		<name>油轨绝对压力 c1</name>
 		<length>2</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>Kpa</introduction>
 	</Parameter>
-	<Parameter id=33>
-		<name>����̤�����λ��  c2</name>
+	<Parameter id="33">
+		<name>加速踏板相对位置  c2</name>
 		<length>1</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
-	<Parameter id=34>
-		<name>�����������¶� c4</name>
+	<Parameter id="34">
+		<name>发动机机油温度 c4</name>
 		<length>2</length>
 		<decode>SignedByteDecoder</decode>
-		<introduction>���϶�</introduction>
+		<introduction>摄氏度</introduction>
 	</Parameter>
-	<Parameter id=35>
-		<name>����֡�Ĺ�����03</name>
+	<Parameter id="35">
+		<name>冻结帧的故障码03</name>
 		<length>-1</length>
 		<decode></decode>
 		<introduction></introduction>
 	</Parameter>
-	<Parameter id=36>
-		<name>�豸װ������ʻ�����</name>
+	<Parameter id="36">
+		<name>设备装车后行驶的里程</name>
 		<length>4</length>
 		<decode>DecimalByteDecoder</decode>
 		<introduction></introduction>
