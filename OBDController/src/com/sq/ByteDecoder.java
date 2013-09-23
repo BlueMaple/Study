@@ -1,5 +1,8 @@
 package com.sq;
 
-public class ByteDecoder {
-
+public abstract class ByteDecoder {
+	public abstract String decode(String source , int length);
+	public int changeHexadecimalToDecimal(char c){
+		return (c >= 58)?(c-87):(c-48);
+	}
 }

@@ -165,7 +165,7 @@
 	<Parameter id="27">
 		<name>加速踏板位置D  aa</name>
 		<length>1</length>
-		<decode></decode>
+		<decode>DecimalByteDecoder</decode>
 		<introduction>%</introduction>
 	</Parameter>
 	<Parameter id="28">
@@ -213,7 +213,7 @@
 	<Parameter id="35">
 		<name>冻结帧的故障码03</name>
 		<length>-1</length>
-		<decode></decode>
+		<decode>ASCIIByteDecoder</decode>
 		<introduction></introduction>
 	</Parameter>
 	<Parameter id="36">
