@@ -7,8 +7,8 @@ public class ASCIIByteDecoder extends ByteDecoder{
 		// TODO Auto-generated method stub
 		String result = "";
 		for(int i = 0 ; i < source.length()/2 ; i+=2){
-			char oneChar = (char)((source.charAt(i)-'0')*10 + (source.charAt(i+1) - '0'));
-			result += oneChar;
+			int charInteger = Integer.valueOf(source.substring(i*2 , i*2+2) , 16);
+			result += charInteger;
 		}
 		return result;
 	}

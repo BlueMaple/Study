@@ -4,6 +4,7 @@ import java.lang.reflect.Constructor;
 import org.apache.log4j.Logger;
 import com.fix.obd.protocol.ODBProtocol;
 import com.fix.obd.protocol.ODBProtocolParser;
+import com.fix.obd.util.ProtocolPropertiesUtil;
 import com.sq.ASCIIByteDecoder;
 import com.sq.ByteDecoder;
 import com.sq.XMLReader;
@@ -24,7 +25,9 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 	@Override
 	public boolean DBOperation() {
 		// TODO Auto-generated method stub
-		logger.info("÷’∂À–≈œ¢∞¸¿®" + this.getRealMessage());
+		this.clientId = this.getId();
+		this.bufferId = this.getBufferId();
+		
 		String realMessage = this.getRealMessage();		
 		String time = readTime(realMessage);
 		
@@ -160,7 +163,13 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 	@Override
 	public byte[] replyToClient() {
 		// TODO Auto-generated method stub
-		return null;
+		StackTraceElement[] stacks = new Throwable().getStackTrace(); 
+		String classname =  stacks[0].getClassName().substring(stacks[0].getClassName().lastIndexOf(".")+1);
+		ProtocolPropertiesUtil p = new ProtocolPropertiesUtil();
+		String operationId = p.getIdByProtocol(classname);
+		ServerAck serverACK = new ServerAck(clientId,bufferId,operationId);
+		return serverACK.replyToClient();
+
 	}
 
 }
