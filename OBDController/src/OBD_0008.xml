@@ -38,7 +38,7 @@
 	</Parameter>
 	<Parameter id="6">
 		<name>发动机转速</name>
-		<length>1</length>
+		<length>2</length>
 		<decode>UnsignedByteDecoder</decode>
 		<introduction>转每分</introduction>
 	</Parameter>
