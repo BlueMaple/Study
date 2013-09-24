@@ -26,7 +26,7 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 		// TODO Auto-generated method stub
 		logger.info("终端信息包括" + this.getRealMessage());
 		String realMessage = this.getRealMessage();		
-		readTime(realMessage);
+		String time = readTime(realMessage);
 		
 		boolean sign = true;
 		if(sign){
@@ -41,7 +41,45 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 	
 	private void readParameter(String message) {
 		// TODO Auto-generated method stub
-		
+		int mapSize = reader.getMapSize();
+		int effIndex = 12;
+		for(int index = 0 ; index < mapSize ; index++){
+			String name = reader.getElementName(index);
+			int length = reader.getElementLength(index);
+			String handler = reader.getElementHandler(index);
+
+			if(length > 0){
+				System.out.println(message.length()+"--"+effIndex+length*2);
+				String effString = message.substring(effIndex , effIndex+length*2);
+				effIndex += length*2;
+				
+				try {
+					Constructor con = Class.forName("com.sq."+handler).getConstructor();
+					ByteDecoder decoder = (ByteDecoder) con.newInstance();
+					String result = decoder.decode(effString, length);
+					
+					logger.info("收到OBD信息-"+name+":"+result);
+				}catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+			else if(length == -1 && handler.equals("ASCIIByteDecoder")){
+				ASCIIByteDecoder decoder = new ASCIIByteDecoder();
+
+				String effString = message.substring(effIndex , effIndex+2);
+				effIndex += 2;
+				int effInteger = decoder.getStringValue(effString);
+				logger.info("收到OBD信息-"+name+":"+effInteger);
+				effString = message.substring(effIndex, effIndex+effInteger*2);
+				effIndex += effInteger*2;
+				String result = decoder.decode(effString, effInteger);
+				
+				logger.info("收到OBD信息-"+name+":"+result);
+			}
+
+		}
 	}
 
 	private void readEffectiveParameter(String message) {
@@ -65,7 +103,7 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 						ByteDecoder decoder = (ByteDecoder) con.newInstance();
 						String result = decoder.decode(effString, length);
 						
-						logger.info("收到OBD信息-"+name+":"+result);
+						logger.info("收到OBD信息-"+name+":("+length+")"+result);
 					}catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -76,17 +114,24 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 					ASCIIByteDecoder decoder = new ASCIIByteDecoder();
 
 					String effString = message.substring(effIndex , effIndex+2);
+					effIndex += 2;
 					int effInteger = decoder.getStringValue(effString);
-					logger.info("收到OBD信息-"+name);
+					effString = message.substring(effIndex, effIndex+effInteger*2);
+					effIndex += effInteger*2;
+					String result = decoder.decode(effString, effInteger);
+					
+					logger.info("收到OBD信息-"+name+":("+effInteger+")"+result);
 				}
 			}
 			index++;
 		}
 	}
 
-	private void readTime(String message){
+	private String readTime(String message){
 		String timePart = message.substring(0, 12);
 		logger.info("OBD状态信息-时间：" + timePart);
+		
+		return timePart;
 	}
 	
 	private byte[] changeStringToBits(String eff) {

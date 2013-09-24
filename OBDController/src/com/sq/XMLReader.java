@@ -44,6 +44,10 @@ public class XMLReader {
 		}
 	}
 	
+	public int getMapSize(){
+		return elementMap.size();
+	}
+	
 	public String getElementName(int index) {
 		// TODO Auto-generated method stub
 		if(elementMap.containsKey(index)){
