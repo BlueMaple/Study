@@ -5,9 +5,9 @@ import org.apache.log4j.Logger;
 import com.fix.obd.protocol.ODBProtocol;
 import com.fix.obd.protocol.ODBProtocolParser;
 import com.fix.obd.util.ProtocolPropertiesUtil;
-import com.sq.ASCIIByteDecoder;
-import com.sq.ByteDecoder;
-import com.sq.XMLReader;
+import com.fix.obd.util.obd.ASCIIByteDecoder;
+import com.fix.obd.util.obd.ByteDecoder;
+import com.fix.obd.util.obd.XMLReader;
 
 public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 	private static final Logger logger = Logger.getLogger(UploadOBDInfo.class);
@@ -57,7 +57,7 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 				effIndex += length*2;
 				
 				try {
-					Constructor con = Class.forName("com.sq."+handler).getConstructor();
+					Constructor con = Class.forName("com.fix.obd.protocol.impl."+handler).getConstructor();
 					ByteDecoder decoder = (ByteDecoder) con.newInstance();
 					String result = decoder.decode(effString, length);
 					
@@ -102,7 +102,7 @@ public class UploadOBDInfo extends ODBProtocolParser implements ODBProtocol{
 					effIndex += length*2;
 					
 					try {
-						Constructor con = Class.forName("com.sq."+handler).getConstructor();
+						Constructor con = Class.forName("com.fix.obd.util.obd."+handler).getConstructor();
 						ByteDecoder decoder = (ByteDecoder) con.newInstance();
 						String result = decoder.decode(effString, length);
 						

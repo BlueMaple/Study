@@ -1,4 +1,4 @@
-package com.sq;
+package com.fix.obd.util.obd;
 
 public class ASCIIByteDecoder extends ByteDecoder{
 

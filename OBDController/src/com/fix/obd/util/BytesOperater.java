@@ -113,5 +113,4 @@ public class BytesOperater {
 		}
 		//System.out.println("");
 	}
-
 }

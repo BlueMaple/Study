@@ -58,7 +58,6 @@ public class UploadTerminalDataTask implements Runnable {
 			byte[] receiveBuf = new byte[BUFFERSIZE];
 			while ((recvMsgSize = is.read(receiveBuf)) != -1) {
 				StringBuilder stringBuilder = new StringBuilder();
-
 				for (int i = 0; i < receiveBuf.length; i++) {
 					stringBuilder.append(String.format("%02x", receiveBuf[i]));
 				}
@@ -68,16 +67,19 @@ public class UploadTerminalDataTask implements Runnable {
 				str = str.substring(0,str.lastIndexOf("aa"));
 				String[] messages = str.split("aaaa");
 				for(int i=0;i<messages.length;i++){
+					System.out.println("Message:" + messages[i]);
 					try {
 						String operationId = messages[i].substring(26,30);
 						IdPropertiesUtil p = new IdPropertiesUtil();
 						String propertyName = p.getProtocolById(operationId);
-						Constructor con = Class.forName("com.fix.obd.protocol.impl." + propertyName).getConstructor(String.class);
-						ODBProtocol odbProtocol = (ODBProtocol) con.newInstance(messages[i]);
-						odbProtocol.DBOperation();
-						byte[] responseBytes = odbProtocol.replyToClient();
-						if(responseBytes!=null)
-							os.write(responseBytes);
+						if(propertyName!=null&&!"".equals(propertyName)){
+							Constructor con = Class.forName("com.fix.obd.protocol.impl." + propertyName).getConstructor(String.class);
+							ODBProtocol odbProtocol = (ODBProtocol) con.newInstance(messages[i]);
+							odbProtocol.DBOperation();
+							byte[] responseBytes = odbProtocol.replyToClient();
+							if(responseBytes!=null)
+								os.write(responseBytes);
+						}
 					} catch (InstantiationException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

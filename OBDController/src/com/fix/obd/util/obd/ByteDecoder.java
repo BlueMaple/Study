@@ -1,4 +1,4 @@
-package com.sq;
+package com.fix.obd.util.obd;
 
 public abstract class ByteDecoder {
 	public abstract String decode(String source , int length);

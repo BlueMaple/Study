@@ -6,7 +6,7 @@ import com.fix.obd.protocol.ODBProtocol;
 import com.fix.obd.protocol.ODBProtocolParser;
 
 public class ReadDTC extends ODBProtocolParser implements ODBProtocol{
-	private static final  Logger logger = Logger.getLogger(TerminalHeartbeat.class);
+	private static final  Logger logger = Logger.getLogger(ReadDTC.class);
 	private String clientId;
 	private String bufferId;
 

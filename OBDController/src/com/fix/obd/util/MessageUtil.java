@@ -14,4 +14,9 @@ public class MessageUtil {
 				.HexString2Bytes(responseStr);
 		return protocolBytes;
 	}
+	public static String reverseStr(String str){
+		StringBuffer buffer = new StringBuffer(str);
+		StringBuffer result = buffer.reverse();
+		return result.toString();
+	}
 }

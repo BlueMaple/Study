@@ -1,4 +1,4 @@
-package com.sq;
+package com.fix.obd.util.obd;
 
 import java.io.File;
 import java.util.HashMap;

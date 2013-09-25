@@ -1,6 +1,6 @@
-package com.sq;
+package com.fix.obd.util.obd;
 
-public class UnsignedByteDecoder extends ByteDecoder{
+public class DecimalByteDecoder extends ByteDecoder{
 
 	@Override
 	public String decode(String source, int length) {
@@ -11,6 +11,7 @@ public class UnsignedByteDecoder extends ByteDecoder{
 			result += cInteger * Math.pow(16, source.length()-1-i);
 		}
 		return result+"";
+
 	}
 
 }
